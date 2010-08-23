@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-/<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+                    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <script src="resistor.js"></script>
+  <link rel="stylesheet" href="qunit.css" type="text/css" media="screen" />
+  <script type="text/javascript" src="qunit.js"></script>
+
+  <script>
+test('resistorValue()', function() { 
+    var testResistor = resistor;
+	testResistor.band1 = "black";
+	testResistor.band2 = "brown";
+	testResistor.multiplier = "brown";
+	
+	equals(testResistor.resistorValue(), 10, 'black and brown with a brown multiplier should be 10');
+})
+
+test('resistorValue()', function() { 
+    var testResistor = resistor;
+	testResistor.band1 = "black";
+	testResistor.band2 = "brown";
+	testResistor.multiplier = "silver";
+	
+	equals(testResistor.resistorValue(), 0.01, 'black and brown with a brown multiplier should be 10');
+})
+  </script>
+  
+</head>
+<body>
+  <h1 id="qunit-header">QUnit example</h1>
+ <h2 id="qunit-banner"></h2>
+ <h2 id="qunit-userAgent"></h2>
+ <ol id="qunit-tests"></ol>
+</body>
+</html>

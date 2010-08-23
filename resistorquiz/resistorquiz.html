@@ -1,0 +1,295 @@
+<!doctype html>
+<html>
+  <head>
+    <script type="text/javascript" src="jquery.js"></script>	
+    <script type="text/javascript" src="resistor.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		
+		$("#answer").click(function () {
+			var resistorAnswer = $("#resistorValue").val();
+		 	if (Number(resistorAnswer) == resistor.resistorValue()) {
+				alert("Kickass, " + resistor.resistorValue() + " was the correct answer.");
+			}
+			else {
+				alert("The answer was: " + resistor.resistorValue());
+			}
+		});
+		
+		$('#resistorValues').hide();
+		
+		$("#showr").click(function () {
+		 	$("#resistorValues").show(2000);
+		});
+		
+		$("#hidr").click(function () {
+		  $("#resistorValues").hide(2000);
+		});
+	});
+	</script>
+  </head>
+  <body>
+    <div id="band1">band1</div>
+    <div id="band2">band2</div>
+    <div id="multiplier">multiplier</div>
+    <div id="tolerance">tolerance</div>
+		
+	<form id="QuizForm">
+		<label>
+		<span>Resistor Value: </span>
+		<input type="text" class="input-text" name="resistorValue" id="resistorValue"/>
+		<button id="answer">Check Answer</button>
+		</label>
+	</form>
+	
+	<div>
+		<button id="showr">Show Values</button>
+	  	<button id="hidr">Hide Values</button>
+	</div>
+	<div id="resistorValues">
+<table border="1">
+	<tr>
+		<th>
+			Color
+		</th>
+		<th>
+			1<sup>st</sup> band
+		</th>
+		<th>
+			2<sup>nd</sup> band
+		</th>
+		<th>
+			3<sup>rd</sup> band (multiplier)
+		</th>
+		<th>
+			4<sup>th</sup> band (tolerance)
+		</th>
+		<th>
+			Temp. Coefficient
+		</th>
+	</tr>
+	<tr style="background:black; color:white">
+		<td>
+			<font color="white">Black</font>
+		</td>
+		<td>
+			<font color="white">0</font>
+		</td>
+		<td>
+			<font color="white">0</font>
+		</td>
+		<td>
+			<font color="white">10<sup>0</sup></font>
+		</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr style="background:#654321; color:white">
+		<td>
+			<font color="white">Brown</font>
+		</td>
+		<td>
+			<font color="white">1</font>
+		</td>
+		<td>
+			<font color="white">1</font>
+		</td>
+		<td>
+			<font color="white">10<sup>1</sup></font>
+		</td>
+		<td>
+			<font color="white">1%</font>
+		</td>
+		<td>
+			<font color="white">100 ppm</font>
+		</td>
+	</tr>
+	<tr style="background:#e02410; color:black">
+		<td>
+			<font color="black">Red</font>
+		</td>
+		<td>
+			2
+		</td>
+		<td>
+			2
+		</td>
+		<td>
+			10<sup>2</sup>
+		</td>
+		<td>
+			2% (G)
+		</td>
+		<td>
+			50 ppm
+		</td>
+	</tr>
+	<tr bgcolor="#FF7F00">
+		<td>
+			Orange
+		</td>
+		<td>
+			3
+		</td>
+		<td>
+			3
+		</td>
+		<td>
+			10<sup>3</sup>
+		</td>
+		<td></td>
+		<td>
+			15 ppm
+		</td>
+	</tr>
+	<tr bgcolor="#FFFF00">
+		<td>
+			Yellow
+		</td>
+		<td>
+			4
+		</td>
+		<td>
+			4
+		</td>
+		<td>
+			10<sup>4</sup>
+		</td>
+		<td></td>
+		<td>
+			25 ppm
+		</td>
+	</tr>
+	<tr bgcolor="#228B22">
+		<td>
+			<font color="white">Green</font>
+		</td>
+		<td>
+			<font color="white">5</font>
+		</td>
+		<td>
+			<font color="white">5</font>
+		</td>
+		<td>
+			<font color="white">10<sup>5</sup></font>
+		</td>
+		<td>
+			<font color="white">0.5% (D)</font>
+		</td>
+		<td></td>
+	</tr>
+	<tr style="background:#0000CD; color:white">
+		<td>
+			<font color="white">Blue</font>
+		</td>
+		<td>
+			<font color="white">6</font>
+		</td>
+		<td>
+			<font color="white">6</font>
+		</td>
+		<td>
+			<font color="white">10<sup>6</sup></font>
+		</td>
+		<td>
+			<font color="white">0.25% (C)</font>
+		</td>
+		<td></td>
+	</tr>
+	<tr style="background:#9400D3; color:white">
+		<td>
+			<font color="white">Violet</font>
+		</td>
+		<td>
+			<font color="white">7</font>
+		</td>
+		<td>
+			<font color="white">7</font>
+		</td>
+		<td>
+			<font color="white">10<sup>7</sup></font>
+		</td>
+		<td>
+			<font color="white">0.1% (B)</font>
+		</td>
+		<td></td>
+	</tr>
+	<tr style="background:#808080; color:white">
+		<td>
+			Gray
+		</td>
+		<td>
+			8
+		</td>
+		<td>
+			8
+		</td>
+		<td>
+			10<sup>8</sup>
+		</td>
+		<td>
+			0.05% (A)
+		</td>
+		<td></td>
+	</tr>
+	<tr bgcolor="#FFFFFF">
+		<td>
+			White
+		</td>
+		<td>
+			9
+		</td>
+		<td>
+			9
+		</td>
+		<td>
+			10<sup>9</sup>
+		</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr bgcolor="#D4AF37">
+		<td>
+			Gold
+		</td>
+		<td></td>
+		<td></td>
+		<td>
+			10<sup>-1</sup>
+		</td>
+		<td>
+			5% (J)
+		</td>
+		<td></td>
+	</tr>
+	<tr bgcolor="#C0C0C0">
+		<td>
+			Silver
+		</td>
+		<td></td>
+		<td></td>
+		<td>
+			10<sup>-2</sup>
+		</td>
+		<td>
+			10% (K)
+		</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>
+			None
+		</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>
+			20% (M)
+		</td>
+		<td></td>
+	</tr>
+</table>
+
+	</div>
+  </body>
+</html>
